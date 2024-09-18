@@ -1,21 +1,21 @@
 import tkinter as tk
 import random
 
-def generar_numero():
-  numero_aleatorio = random.randint(1, 100)  # Genera un número entre 1 y 100
-  label_resultado.config(text=(f"\nEl número ganador es: {numero_aleatorio}"))
+def generate_number():
+  random_number = random.randint(1, 100)  # Genera un número entre 1 y 100
+  label_result.config(text=(f"\nEl número ganador es: {random_number}"))
 
 # Crear la ventana principal
-ventana = tk.Tk()
-ventana.title("Seleccionador de  números por sorteo")
+window = tk.Tk()
+window.title("Random Number Selector")
 
 # Crear un botón
-boton = tk.Button(ventana, text="Sortear número", command=generar_numero)
-boton.pack()
+button = tk.Button(ventana, text="Sortear número", command=generate_number)
+button.pack()
 
 # Crear un label para mostrar el resultado
-label_resultado = tk.Label(ventana)
-label_resultado.pack()
+label_result = tk.Label(ventana)
+label_result.pack()
 
 # Iniciar el bucle principal de la aplicación
-ventana.mainloop()
+window.mainloop()
