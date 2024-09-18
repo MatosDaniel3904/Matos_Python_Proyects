@@ -14,7 +14,7 @@ button = tk.Button(ventana, text="Sortear número", command=generate_number)
 button.pack()
 
 # Crear un label para mostrar el resultado
-label_result = tk.Label(ventana)
+label_result = tk.Label(window)
 label_result.pack()
 
 # Iniciar el bucle principal de la aplicación
