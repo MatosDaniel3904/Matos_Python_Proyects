@@ -1,4 +1,6 @@
 import tkinter as tk
+import csv
+
 
 def registrar_persona():
     nombre = entry_nombre.get()
@@ -6,14 +8,17 @@ def registrar_persona():
     id = entry_id.get()
     pais = entry_pais.get()
     profesion = entry_profesion.get()
-
-    # Aquí puedes agregar la lógica para guardar los datos, por ejemplo, en un archivo o base de datos
-    print("\n\nDatos registrados:")
-    print("Nombre:", nombre)
-    print("Apellido:", apellido)
-    print("Número ID:", id)
-    print("País:", pais)
-    print("Profesión:", profesion)
+  
+    datos = [nombre, apellido, id, pais, profesion]
+    
+    
+    with open('registro_de_nombre.csv', 'a', newline='',encoding="UTF-8") as archivo:
+      escritor_csv = csv.writer(archivo)
+ 
+      escritor_csv.writerow(datos)
+    
+    
+   
 
 # Crear la ventana principal
 ventana = tk.Tk()
@@ -49,6 +54,7 @@ entry_profesion.pack()
 # Crear el botón de registro
 boton_registrar = tk.Button(ventana, text="Registrar", command=registrar_persona)
 boton_registrar.pack()
+
 
 # Iniciar el bucle principal de la aplicación
 ventana.mainloop()
